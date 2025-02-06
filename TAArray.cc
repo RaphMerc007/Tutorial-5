@@ -11,7 +11,7 @@ TAArray::TAArray() {
 
 TAArray::~TAArray() {
   for (int i = 0; i < size+1; i++) {
-		delete data[i];
+	  delete data[i];
   }
   delete[] data;
 }
@@ -26,7 +26,7 @@ void TAArray::add(TextArea* ta) {
 
 bool TAArray::add(TextArea* other, int index) {
   if (index < 0 || index > size || size >= MAX_COMPONENTS) {
-  	return false;
+    return false;
   }
   
   for (int i = size; i > index; i--) {
@@ -35,7 +35,7 @@ bool TAArray::add(TextArea* other, int index) {
 
   data[index] = other;
   size++;
-	return true;
+  return true;
 }
 
 TextArea* TAArray::get(string id) const {
@@ -63,7 +63,7 @@ TextArea* TAArray::remove(int index) {
   for (int i = index; i < size - 1; i++) {
     data[i] = data[i + 1];
   }
-	size--;
+  size--;
   return temp;
 }
 
