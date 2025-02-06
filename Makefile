@@ -18,10 +18,3 @@ Tester.o:	Tester.h Tester.cc
 	
 clean:
 	rm -f test *.o
-
-
-#debug flag for leak detection
-debugflag  = -std=c++11 -g
-
-debugtest: test.cc
-	g++ $(debugflag) $(flags) $(inc) -o debugtest test.cc TextArea.cc RGB.cc TAArray.cc Tester.cc -lX11 -L /opt/X11/lib
