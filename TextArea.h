@@ -42,7 +42,7 @@ class TextArea{
       TextArea(const TextArea& ta){
          dimensions = ta.getDimensions();
          id = ta.getId();
-         text = "DUPLICATE";
+         text = ta.getText();
          fill = ta.getFill();
          border = ta.getBorder();
       }
@@ -53,6 +53,9 @@ class TextArea{
       string getId() const{
          return id;
       }
+			string getText() const{
+				return text;
+			}
       RGB getBorder() const{
          return border;
       }
