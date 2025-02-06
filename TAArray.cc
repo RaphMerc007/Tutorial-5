@@ -5,28 +5,28 @@
 using namespace std;
 
 TAArray::TAArray() {
-   this->size = 0;
-   data = new TextArea*[MAX_COMPONENTS];
+  this->size = 0;
+  data = new TextArea*[MAX_COMPONENTS];
 }
 
 TAArray::~TAArray() {
-   for (int i = 0; i < size; i++) {
-     delete data[i];
-   }
-   delete[] data;
+  for (int i = 0; i < size; i++) {
+  	delete data[i];
+  }
+  delete[] data;
 }
 
 int TAArray::getSize() const {
-   return size;
+  return size;
 }
 
 void TAArray::add(TextArea* ta) {
-   add(ta, size);
+  add(ta, size);
 }
 
 bool TAArray::add(TextArea* other, int index) {
-   if (index < 0 || index > size || size >= MAX_COMPONENTS) {
-    return false;
+  if (index < 0 || index > size || size >= MAX_COMPONENTS) {
+  	return false;
   }
   
   for (int i = size; i > index; i--) {
