@@ -23,5 +23,5 @@ clean:
 #debug flag for leak detection
 debugflag  = -std=c++11 -g
 
-debugtest: test.cc
-	g++ $(debugflag) $(flags) $(inc) -o debugtest test.cc TextArea.cc RGB.cc TAArray.cc Tester.cc -lX11 -L /opt/X11/lib
+debugtest: test.cc TextArea.o RGB.o TAArray.o Tester.o
+	g++ $(debugflag) $(flags) $(inc) -o debugtest test.cc TextArea.o RGB.o TAArray.o Tester.o -lX11 -L /opt/X11/lib
